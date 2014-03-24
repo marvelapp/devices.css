@@ -6,7 +6,8 @@ corresponds to the device you're picking.
 Similarly if you want a different colour or to toggle it to be landscape, just add the respective colour
 class to the wrapping element, eg. 'red' or 'gold' or 'white' and the landscape class 'landscape':
 
-# Here is a list of all possible devices and their classes:
+# Possible combinations:
+```
 #iphone5s (black by default) - .landscape, .white + .gold
 #iphone5c (black by default, could be an iPhone 5) - .landscape, .white + .red + .yellow + .green
 #ipad (black by default) - .landscape, .silver
@@ -15,8 +16,10 @@ class to the wrapping element, eg. 'red' or 'gold' or 'white' and the landscape 
 #lumia920 (yellow by default) - .landscape, .black + .white + .yellow + .red + .blue
 #s5 (white by default) - .landscape, .black
 #htc-one - .landscape
+```
 
 # Example
+```
 #iphone5s.landscape.gold
         .device
                 .inner
@@ -30,6 +33,7 @@ class to the wrapping element, eg. 'red' or 'gold' or 'white' and the landscape 
                         Screen content goes here
                 .bottom-bar
                 .home
+```
 
 Will give you a gold landscape iPhone 5S! The CSS is quite messy (taken directly from the Prototype view of Marvel),
 so use it, tweak it and improve however you want! Also sign up for Marvel if you haven't already because it's great
