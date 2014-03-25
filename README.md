@@ -1,3 +1,5 @@
+See the demo [here](http://marvelapp.github.io/devices.css/)
+
 # Usage
 In order to use a device, visit the index.html file and pick which one you want, copying the 'device' class
 and all it's children. The CSS is set up so that class has to be a wrapped in an element of ID which
@@ -36,4 +38,4 @@ class to the wrapping element, eg. 'red' or 'gold' or 'white' and the landscape 
 ```
 
 Will give you a gold landscape iPhone 5S! The CSS is quite messy (taken directly from the Prototype view of Marvel),
-so use it, tweak it and improve however you want! Also sign up for Marvel if you haven't already because it's great
+so use it, tweak it and improve however you want! Also sign up for [Marvel](http://marvelapp.com) if you haven't already because it's great
