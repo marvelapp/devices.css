@@ -26,14 +26,6 @@ a {
 	transition: all 0.3s ease-in-out;
 }
 
-.device, .device div, *:before, *:after {
-	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1);
-	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-	-moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-	-o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-	transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-}
-
 a:hover {
 	color: #0079da;
 }
@@ -264,23 +256,4 @@ a {
 	border-radius: 1px;
 	-webkit-box-shadow: 0 0 0 3px #111;
 	box-shadow: 0 0 0 3px #111;
-}
-
-.device .screen:before {
-	content: '';
-	display: block;
-	text-indent: -9999px;
-	height: 34px;
-	display: inline-block;
-	text-align: left;
-	width: 96px;
-	position: absolute;
-	top: 50%;
-	margin-top: -17px;
-	left: 50%;
-	margin-left: -48px;
-	background-image: url(https://marvelapp.com/static/site_assets/images/logo.png);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-size: 96px 68px;
 }
