@@ -23,18 +23,18 @@ class to the wrapping element, eg. 'red' or 'gold' or 'white' and the landscape 
 # Example
 ```
 #iphone5s.landscape.gold
-        .device
-                .inner
-                .sleep
-                .volume
-                .camera
-                .top-bar
-                .sensor
-                .speaker
-                .screen
-                        Screen content goes here
-                .bottom-bar
-                .home
+    .device
+        .inner
+        .sleep
+        .volume
+        .camera
+        .top-bar
+        .sensor
+        .speaker
+        .screen
+            Screen content goes here
+        .bottom-bar
+        .home
 ```
 
 Will give you a gold landscape iPhone 5S! The CSS is quite messy (taken directly from the Prototype view of Marvel),
