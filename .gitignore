@@ -11,3 +11,7 @@
 .idea/scopes/scope_settings.xml
 
 .idea/vcs.xml
+
+.DS_Store
+
+assets/js/site.js

@@ -1,0 +1,25 @@
+{
+  "name": "Devices.css",
+  "version": "0.0.1",
+  "description": "Marvel Devices",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "/"
+  },
+  "keywords": [
+    "/"
+  ],
+  "author": "@olegtsaplin",
+  "license": "ISC",
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-compass": "~0.8.0",
+    "grunt-contrib-uglify": "~0.4.0",
+    "grunt-contrib-sass": "~0.7.3"
+  }
+}
