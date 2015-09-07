@@ -15,3 +15,6 @@
 .DS_Store
 
 assets/js/site.js
+
+node_modules/
+.sass-cache/
