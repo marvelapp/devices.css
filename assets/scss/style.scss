@@ -1,13 +1,12 @@
 @import 'normalize';
-@import 'mixins';
 
 body{
-	font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	font-size: 14px;
 	text-align: center;
-	color: #1e1e1e;
+	color: #868e96;
 }
 
 html, body {
@@ -29,38 +28,34 @@ html, body {
 }
 
 .marvel-device, .marvel-device div, *:before, *:after {
-	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1);
-	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-	-moz-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
-	-o-transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
 	transition: all 500ms cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }
 
-a{
+a {
 	cursor: pointer;
-	color: #36a6ff;
-	@include transition(color, 300ms, ease-in-out);
+	color: #329af0;
+	transition: color 300ms ease-in-out;
 }
 
 header {
 	padding: 150px 0;
 	line-height: 24px;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
 
-footer{
-	padding: 48px 0;
-	line-height: 24px;
+	.button {
+		margin-top: 16px;
+	}
 }
 
 h1{
 	font-size: 24px;
 	font-weight: bold;
+	color: #495057;
 }
 
 header h1 {
 	margin-bottom: 30px;
-	font-size: 33px;
+	font-size: 34px;
 	line-height: 1.2;
 }
 
@@ -91,13 +86,13 @@ section h1 {
 	&.new{
 		&:before{
 			content: 'NEW';
-			background: #FF703F;
+			background: #fcc419;
 			padding: 0 6px;
 			line-height: 24px;
 			vertical-align: top;
 			color: white;
-			font-size: 14px;
-			@include border-radius(2px);
+			font-size: 12px;
+			border-radius: 24px;
 			margin-right: 10px;
 			display: inline-block;
 		}
@@ -108,17 +103,13 @@ section.white, #s5.black, #lumia920.white, #lumia920.black {
 	background: #1e1e1e;
 }
 
-#s5.white, #s5.white .select-landscape {
-	color: black;
-}
-
-section.black h1, section.white, section.black .select-landscape, section.white .select-landscape {
+section.black h1, section.white {
 	color: white;
 }
 
 section.gold, section.silver, section.blue, section.red, section.yellow, section.green, #nexus5, #lumia920, #s5, #htc-one {
 	background: white;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid #f1f3f5;
 }
 
 section .wrap {
@@ -148,7 +139,7 @@ p{
 	visibility: hidden;
 	top: 0;
 	z-index: 11111;
-	@include transition(all, 0.2s, ease-in-out);
+	transition: all 200ms ease-in-out;
 	left: 0;
 	background: rgba(255, 255, 255, 0.9);
 
@@ -157,15 +148,7 @@ p{
 		visibility: visible;
 
 		.modal{
-			-moz-transform: none;
-			-webkit-transform: none;
-			-o-transform: none;
-			-ms-transform: none;
 			transform: none;
-			-webkit-transition: all 300ms cubic-bezier(0.105, 0.795, 0.305, 1);
-			-webkit-transition: all 300ms cubic-bezier(0.105, 0.795, 0.305, 1.335); 
-			-moz-transition: all 300ms cubic-bezier(0.105, 0.795, 0.305, 1.335); 
-			-o-transition: all 300ms cubic-bezier(0.105, 0.795, 0.305, 1.335); 
 			transition: all 300ms cubic-bezier(0.105, 0.795, 0.305, 1.335);
 		}
 	}
@@ -188,14 +171,7 @@ p{
 		width: 566px;
 		text-align: left;
 		margin: 0 auto;
-		-moz-transform: scale(0.6) translateY(30px);
-		-webkit-transform: scale(0.6) translateY(30px);
-		-o-transform: scale(0.6) translateY(30px);
-		-ms-transform: scale(0.6) translateY(30px);
 		transform: scale(0.6) translateY(30px);
-		-webkit-transition: all 100ms cubic-bezier(0.000, 0.000, 0.580, 1.000); 
-		-moz-transition: all 100ms cubic-bezier(0.000, 0.000, 0.580, 1.000); 
-		-o-transition: all 100ms cubic-bezier(0.000, 0.000, 0.580, 1.000); 
 		transition: all 100ms cubic-bezier(0.000, 0.000, 0.580, 1.000);
 
         p{
@@ -208,45 +184,42 @@ p{
 	}
 }
 
-hr{
-	outline: none;
-	border: none;
-	height: 1px;
-	background: rgba(0, 0, 0, 0.1);
-	margin: 30px auto;
-	width: 50%;
-}
-
-.twitter-share-button{
-	display: block;
+.buttons {
 	margin: 30px auto 0 auto;
 }
 
+.twitter-share-button{
+	display: inline-block;
+	margin-right: 6px;
+}
+
+.github-button {
+	display: inline-block;
+}
+
 .button{
-	line-height: 48px;
+	line-height: 36px;
 	text-decoration: none;
-	@include border-radius(4px);
-	background: #ADADAD;
+	border-radius: 4px;
+	background: #343a40;
 	color: white;
 	padding: 0 20px;
 	font-weight: bold;
 	letter-spacing: 0px;
-	// text-transform: uppercase;
 	margin: 0 12px;
-	@include transition(all, 0.3s, ease-in-out);
+	transition: all 300ms ease-in-out;
 	display: inline-block;
 
-	&:hover{
-		color: white;
-		background: darken(#ADADAD, 10%);
+	&:hover {
+		background: #212529;
 	}
 
 	&.download{
-		background: #36a6ff;
+		background: #69db7c;
 
 		&:hover{
 			color: white;
-			background: darken(#36a6ff, 10%);
+			background: darken(#69db7c, 10%);
 		}
 	}
 }
@@ -257,7 +230,7 @@ hr{
 	display: block;
 	position: absolute;
 	top: 120px;
-	@include no-touch;
+	user-select: none;
 }
 
 .grab{
@@ -277,17 +250,10 @@ hr{
 	margin: 0 10px;
 	display: inline-block;
 	text-indent: -9999px;
-	@include border-radius(30px);
+	border-radius: 30px;
 	line-height: 30px;
 	cursor: pointer;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
-	-moz-transform: scale(0.6);
-	-webkit-transform: scale(0.6);
-	-o-transform: scale(0.6);
-	-ms-transform: scale(0.6);
 	transform: scale(0.6);
 	opacity: 0.6;
 }
@@ -306,12 +272,10 @@ hr{
 
 .select-white, #s5 .select-white, #s5 .select-white.selected {
 	background: white;
-	-webkit-box-shadow: inset 0 0 0 1px rgba(0,0,0,0.3);
 	box-shadow: inset 0 0 0 1px rgba(0,0,0,0.3);
 }
 
 .select-white.selected {
-	-webkit-box-shadow: none;
 	box-shadow: none;
 }
 
@@ -334,11 +298,11 @@ hr{
 .select-landscape {
 	text-indent: 0px !important;
 	width: 100px !important;
-	color: #1e1e1e;
+	color: black;
+	background: #e9ecef;
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 600;
-	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 	letter-spacing: 2px;
 	padding: 0 10px;
@@ -349,15 +313,7 @@ hr{
 }
 
 .selector li.selected {
-	-webkit-transition: all 500ms cubic-bezier(0.680, 0, 0.265, 1);
-	-webkit-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
-	-moz-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
-	-o-transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
 	transition: all 500ms cubic-bezier(0.680, -0.550, 0.265, 1.550);
-	-moz-transform: scale(1);
-	-webkit-transform: scale(1);
-	-o-transform: scale(1);
-	-ms-transform: scale(1);
 	transform: scale(1);
 	opacity: 1;
 }
@@ -368,7 +324,6 @@ hr{
 
 .marvel-device .screen{
 	text-align: left;
-	text-indent: -9999px;
 }
 
 .side{
@@ -384,7 +339,7 @@ code{
 	font-size: 14px;
 	padding: 20px !important;
 	font-weight: bold;
-	@include border-radius(4px);
+	border-radius: 4px;
 }
 
 .devices{
@@ -394,233 +349,130 @@ code{
 	font-weight: bold;
 }
 
-.marvel-device .screen:before {
-	content: '';
-	display: block;
-	height: 34px;
-	display: inline-block;
-	text-align: left;
-	width: 96px;
-	position: absolute;
-	top: 50%;
-	margin-top: -17px;
-	left: 50%;
-	margin-left: -48px;
-	background-image: url(https://marvelapp.com/static/site_assets/images/logo.png);
-	background-position: 0px 0px;
-	background-repeat: no-repeat;
-	background-size: 96px 68px;
-}
-
-.iphone5s .screen, .iphone6 .screen, .iphone6plus .screen {
+.iphone5s .screen, .iphone8 .screen, .iphone8plus .screen {
 	background: rgb(226,228,228);
-	background: -moz-linear-gradient(top, rgba(226,228,228,1) 0%, rgba(125,130,129,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(226,228,228,1)), color-stop(100%,rgba(125,130,129,1)));
-	background: -webkit-linear-gradient(top, rgba(226,228,228,1) 0%,rgba(125,130,129,1) 100%);
-	background: -o-linear-gradient(top, rgba(226,228,228,1) 0%,rgba(125,130,129,1) 100%);
-	background: -ms-linear-gradient(top, rgba(226,228,228,1) 0%,rgba(125,130,129,1) 100%);
 	background: linear-gradient(to bottom, rgba(226,228,228,1) 0%,rgba(125,130,129,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e4e4', endColorstr='#7d8281',GradientType=0 );
 }
 
-.iphone5s.gold .screen, .iphone6.gold .screen, .iphone6plus.gold .screen{
+.iphone5s.gold .screen, .iphone8.gold .screen, .iphone8plus.gold .screen{
 	background: rgb(241,226,208);
-	background: -moz-linear-gradient(top, rgba(241,226,208,1) 0%, rgba(235,218,199,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(241,226,208,1)), color-stop(100%,rgba(235,218,199,1)));
-	background: -webkit-linear-gradient(top, rgba(241,226,208,1) 0%,rgba(235,218,199,1) 100%);
-	background: -o-linear-gradient(top, rgba(241,226,208,1) 0%,rgba(235,218,199,1) 100%);
-	background: -ms-linear-gradient(top, rgba(241,226,208,1) 0%,rgba(235,218,199,1) 100%);
 	background: linear-gradient(to bottom, rgba(241,226,208,1) 0%,rgba(235,218,199,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e2d0', endColorstr='#ebdac7',GradientType=0 );
 }
 
-.iphone5s.black .screen, .iphone6.black .screen, .iphone6plus.black .screen{
+.iphone5s.black .screen, .iphone8.black .screen, .iphone8plus.black .screen{
 	background: rgb(179,179,183);
-	background: -moz-linear-gradient(top, rgba(179,179,183,1) 0%, rgba(66,64,68,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(179,179,183,1)), color-stop(100%,rgba(66,64,68,1)));
-	background: -webkit-linear-gradient(top, rgba(179,179,183,1) 0%,rgba(66,64,68,1) 100%);
-	background: -o-linear-gradient(top, rgba(179,179,183,1) 0%,rgba(66,64,68,1) 100%);
-	background: -ms-linear-gradient(top, rgba(179,179,183,1) 0%,rgba(66,64,68,1) 100%);
 	background: linear-gradient(to bottom, rgba(179,179,183,1) 0%,rgba(66,64,68,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3b3b7', endColorstr='#424044',GradientType=0 );
 }
 
 .iphone5c.white .screen {
 	background: rgb(217,217,217);
-	background: -moz-linear-gradient(top, rgba(217,217,217,1) 0%, rgba(161,161,161,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(217,217,217,1)), color-stop(100%,rgba(161,161,161,1)));
-	background: -webkit-linear-gradient(top, rgba(217,217,217,1) 0%,rgba(161,161,161,1) 100%);
-	background: -o-linear-gradient(top, rgba(217,217,217,1) 0%,rgba(161,161,161,1) 100%);
-	background: -ms-linear-gradient(top, rgba(217,217,217,1) 0%,rgba(161,161,161,1) 100%);
 	background: linear-gradient(to bottom, rgba(217,217,217,1) 0%,rgba(161,161,161,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d9d9d9', endColorstr='#a1a1a1',GradientType=0 );
 }
 
 .iphone5c.red .screen {
 	background: rgb(255,116,116);
-	background: -moz-linear-gradient(top, rgba(255,116,116,1) 0%, rgba(220,148,223,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,116,116,1)), color-stop(100%,rgba(220,148,223,1)));
-	background: -webkit-linear-gradient(top, rgba(255,116,116,1) 0%,rgba(220,148,223,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,116,116,1) 0%,rgba(220,148,223,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,116,116,1) 0%,rgba(220,148,223,1) 100%);
 	background: linear-gradient(to bottom, rgba(255,116,116,1) 0%,rgba(220,148,223,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff7474', endColorstr='#dc94df',GradientType=0 );
 }
 
 .iphone5c.yellow .screen {
 	background: rgb(255,236,109);
-	background: -moz-linear-gradient(top, rgba(255,236,109,1) 0%, rgba(255,165,70,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,236,109,1)), color-stop(100%,rgba(255,165,70,1)));
-	background: -webkit-linear-gradient(top, rgba(255,236,109,1) 0%,rgba(255,165,70,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,236,109,1) 0%,rgba(255,165,70,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,236,109,1) 0%,rgba(255,165,70,1) 100%);
 	background: linear-gradient(to bottom, rgba(255,236,109,1) 0%,rgba(255,165,70,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffec6d', endColorstr='#ffa546',GradientType=0 );
 }
 
 .iphone5c.blue .screen {
 	background: rgb(157,206,253);
-	background: -moz-linear-gradient(top, rgba(157,206,253,1) 0%, rgba(102,211,173,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(157,206,253,1)), color-stop(100%,rgba(102,211,173,1)));
-	background: -webkit-linear-gradient(top, rgba(157,206,253,1) 0%,rgba(102,211,173,1) 100%);
-	background: -o-linear-gradient(top, rgba(157,206,253,1) 0%,rgba(102,211,173,1) 100%);
-	background: -ms-linear-gradient(top, rgba(157,206,253,1) 0%,rgba(102,211,173,1) 100%);
 	background: linear-gradient(to bottom, rgba(157,206,253,1) 0%,rgba(102,211,173,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dcefd', endColorstr='#66d3ad',GradientType=0 );
 }
 
 .iphone5c.green .screen {
 	background: rgb(151,213,85);
-	background: -moz-linear-gradient(top, rgba(151,213,85,1) 0%, rgba(211,237,32,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(151,213,85,1)), color-stop(100%,rgba(211,237,32,1)));
-	background: -webkit-linear-gradient(top, rgba(151,213,85,1) 0%,rgba(211,237,32,1) 100%);
-	background: -o-linear-gradient(top, rgba(151,213,85,1) 0%,rgba(211,237,32,1) 100%);
-	background: -ms-linear-gradient(top, rgba(151,213,85,1) 0%,rgba(211,237,32,1) 100%);
 	background: linear-gradient(to bottom, rgba(151,213,85,1) 0%,rgba(211,237,32,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#97d555', endColorstr='#d3ed20',GradientType=0 );
 }
 
 .nexus5 .screen {
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	background: rgb(243,66,75);
-	background: -moz-linear-gradient(top, rgba(243,66,75,1) 0%, rgba(255,213,31,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(243,66,75,1)), color-stop(100%,rgba(255,213,31,1)));
-	background: -webkit-linear-gradient(top, rgba(243,66,75,1) 0%,rgba(255,213,31,1) 100%);
-	background: -o-linear-gradient(top, rgba(243,66,75,1) 0%,rgba(255,213,31,1) 100%);
-	background: -ms-linear-gradient(top, rgba(243,66,75,1) 0%,rgba(255,213,31,1) 100%);
 	background: linear-gradient(to bottom, rgba(243,66,75,1) 0%,rgba(255,213,31,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3424b', endColorstr='#ffd51f',GradientType=0 );
 }
 
 .ipad .screen {
 	background: rgb(13,52,119);
-	background: -moz-linear-gradient(top, rgba(13,52,119,1) 0%, rgba(173,243,222,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(13,52,119,1)), color-stop(100%,rgba(173,243,222,1)));
-	background: -webkit-linear-gradient(top, rgba(13,52,119,1) 0%,rgba(173,243,222,1) 100%);
-	background: -o-linear-gradient(top, rgba(13,52,119,1) 0%,rgba(173,243,222,1) 100%);
-	background: -ms-linear-gradient(top, rgba(13,52,119,1) 0%,rgba(173,243,222,1) 100%);
 	background: linear-gradient(to bottom, rgba(13,52,119,1) 0%,rgba(173,243,222,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d3477', endColorstr='#adf3de',GradientType=0 );
 }
 
 .lumia920.black .screen {
 	background: rgb(252,255,244);
-	background: -moz-linear-gradient(top, rgba(252,255,244,1) 0%, rgba(223,229,215,1) 40%, rgba(179,190,173,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,255,244,1)), color-stop(40%,rgba(223,229,215,1)), color-stop(100%,rgba(179,190,173,1)));
-	background: -webkit-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%);
-	background: -o-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%);
-	background: -ms-linear-gradient(top, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%);
 	background: linear-gradient(to bottom, rgba(252,255,244,1) 0%,rgba(223,229,215,1) 40%,rgba(179,190,173,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
 }
 
 .lumia920.white .screen {
 	background: rgb(255,255,255);
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1)));
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 );
 }
 
 .lumia920.blue .screen {
 	background: rgb(255,255,255);
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(0,172,221,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(0,172,221,1)));
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(0,172,221,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(0,172,221,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(0,172,221,1) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(0,172,221,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00acdd',GradientType=0 );
 }
 
 .lumia920.red .screen {
 	background: rgb(255,255,255);
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(230,46,31,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(230,46,31,1)));
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(230,46,31,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(230,46,31,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(230,46,31,1) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(230,46,31,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e62e1f',GradientType=0 );
 }
 
 .lumia920 .screen {
 	background: rgb(255,255,255);
-	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,221,0,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(255,221,0,1)));
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,221,0,1) 100%);
-	background: -o-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,221,0,1) 100%);
-	background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(255,221,0,1) 100%);
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(255,221,0,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffdd00',GradientType=0 );
 }
 
 .iphone4s .screen{
 	background: rgb(239,239,187);
-	background: -moz-linear-gradient(top, rgba(239,239,187,1) 0%, rgba(212,211,221,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(239,239,187,1)), color-stop(100%,rgba(212,211,221,1)));
-	background: -webkit-linear-gradient(top, rgba(239,239,187,1) 0%,rgba(212,211,221,1) 100%);
-	background: -o-linear-gradient(top, rgba(239,239,187,1) 0%,rgba(212,211,221,1) 100%);
-	background: -ms-linear-gradient(top, rgba(239,239,187,1) 0%,rgba(212,211,221,1) 100%);
 	background: linear-gradient(to bottom, rgba(239,239,187,1) 0%,rgba(212,211,221,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#efefbb', endColorstr='#d4d3dd',GradientType=0 );
 }
 
 .s5 .screen {
-	-webkit-box-shadow: none;
 	box-shadow: none;
 	background: rgb(29,151,108);
-	background: -moz-linear-gradient(top, rgba(29,151,108,1) 0%, rgba(147,249,185,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(29,151,108,1)), color-stop(100%,rgba(147,249,185,1)));
-	background: -webkit-linear-gradient(top, rgba(29,151,108,1) 0%,rgba(147,249,185,1) 100%);
-	background: -o-linear-gradient(top, rgba(29,151,108,1) 0%,rgba(147,249,185,1) 100%);
-	background: -ms-linear-gradient(top, rgba(29,151,108,1) 0%,rgba(147,249,185,1) 100%);
 	background: linear-gradient(to bottom, rgba(29,151,108,1) 0%,rgba(147,249,185,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1d976c', endColorstr='#93f9b9',GradientType=0 );
 }
 
 .htc-one .screen{
 	background: rgb(40,48,72);
-	background: -moz-linear-gradient(top, rgba(40,48,72,1) 0%, rgba(133,147,152,1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(40,48,72,1)), color-stop(100%,rgba(133,147,152,1)));
-	background: -webkit-linear-gradient(top, rgba(40,48,72,1) 0%,rgba(133,147,152,1) 100%);
-	background: -o-linear-gradient(top, rgba(40,48,72,1) 0%,rgba(133,147,152,1) 100%);
-	background: -ms-linear-gradient(top, rgba(40,48,72,1) 0%,rgba(133,147,152,1) 100%);
 	background: linear-gradient(to bottom, rgba(40,48,72,1) 0%,rgba(133,147,152,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#283048', endColorstr='#859398',GradientType=0 );
 }
 
 .macbook .screen{
 	background: #f16046;
-	background: -moz-linear-gradient(top, #f16046 0%, #395f84 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f16046), color-stop(100%,#395f84));
-	background: -webkit-linear-gradient(top, #f16046 0%,#395f84 100%);
-	background: -o-linear-gradient(top, #f16046 0%,#395f84 100%);
-	background: -ms-linear-gradient(top, #f16046 0%,#395f84 100%);
 	background: linear-gradient(to bottom, #f16046 0%,#395f84 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f16046', endColorstr='#395f84',GradientType=0 );
+}
+
+.iphone-x .screen{
+	background: rgb(255,38,142);
+	background: linear-gradient(to bottom, rgba(255,38,142,1) 0%,rgba(255,105,79,1) 100%);
+
+	&:before {
+		content: '';
+		width: 140%;
+		height: 100%;
+		position: absolute;
+		top: -30%;
+		right: -70%;
+		background: radial-gradient(ellipse at center, rgba(62,79,249,1) 0%,rgba(62,79,249,0) 64%);
+	}
+
+	&:after {
+		content: '';
+		width: 140%;
+		height: 140%;
+		position: absolute;
+		bottom: -50%;
+		left: -30%;
+		background: radial-gradient(ellipse at center, rgba(247,237,225,1) 0%,rgba(247,237,225,0) 70%);
+		transform: rotate(30deg);
+	}
+}
+
+.note8 .screen {
+	background: rgb(34,136,254);
+	background: linear-gradient(to bottom, rgba(34,136,254,1) 0%,rgba(253,235,169,1) 100%);
 }

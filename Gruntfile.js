@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 		watch: {
 			sass: {
 				files: 'assets/*/*.{scss,sass}',
-				tasks: ['sass:compressed'],
+				tasks: ['sass:dist', 'postcss:dist'],
 			},
 			js: {
 				files: ['assets/js/*.js'],
@@ -12,17 +12,18 @@ module.exports = function(grunt) {
 			}
 		},
 		sass: {
-            compressed: {
-                options: {
-                    style: 'compressed'
-                },
+			dist: {
+				options: {
+					outputStyle: 'compressed',
+					sourceMap: false,
+				},
 
-                files: {
-                    'assets/devices.min.css': 'assets/scss/devices.scss',
-                    'assets/style.css': 'assets/scss/style.scss',
-                }
-            },
-        },
+				files: {
+					'assets/devices.min.css': 'assets/scss/devices.scss',
+					'assets/style.css': 'assets/scss/style.scss',
+				}
+			},
+		},
 		uglify: {
 			all: {
 				files: {
@@ -32,12 +33,24 @@ module.exports = function(grunt) {
 				}
 			},
 		},
+		postcss: {
+			options: {
+				map: false,
+				processors: [
+					require('autoprefixer')
+				]
+			},
+			dist: {
+				src: 'assets/*.css'
+			}
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-sass');
+	grunt.loadNpmTasks('grunt-sass');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-postcss');
 
-	grunt.registerTask('default', ['sass:compressed', 'uglify' , 'watch']);
+	grunt.registerTask('default', ['sass:dist', 'postcss:dist', 'uglify' , 'watch']);
 };
