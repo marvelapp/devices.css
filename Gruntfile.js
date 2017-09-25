@@ -4,7 +4,7 @@ module.exports = function(grunt) {
 		watch: {
 			sass: {
 				files: 'assets/*/*.{scss,sass}',
-				tasks: ['sass:compressed', 'postcss:dist'],
+				tasks: ['sass:dist', 'postcss:dist'],
 			},
 			js: {
 				files: ['assets/js/*.js'],
@@ -12,9 +12,9 @@ module.exports = function(grunt) {
 			}
 		},
 		sass: {
-			compressed: {
+			dist: {
 				options: {
-					style: 'compressed',
+					outputStyle: 'compressed',
 					sourceMap: false,
 				},
 
@@ -52,5 +52,5 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-postcss');
 
-	grunt.registerTask('default', ['sass:compressed', 'postcss:dist', 'uglify' , 'watch']);
+	grunt.registerTask('default', ['sass:dist', 'postcss:dist', 'uglify' , 'watch']);
 };
